@@ -10,3 +10,7 @@
 main {
    margin-top: 16vh;
 }
+
+#toggleNav {
+   border: none;
+}
