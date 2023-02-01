@@ -21,10 +21,10 @@ const getSingleQuote = async () => {
    // console.log(finalData);
    let singleQuote = finalData[randomQuoteIndex];
    text1 = singleQuote.text;
-   quote.innerText = singleQuote.text;
+   quote.innerText = '"' + singleQuote.text + '"';
    singleQuote.author !== null
-      ? (author.innerText = singleQuote.author)
-      : (author.innerText = 'Unknown');
+      ? (author.innerText = 'By. ' + singleQuote.author)
+      : (author.innerText = 'By. ' + 'Unknown');
 
    return singleQuote;
 };
