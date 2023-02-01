@@ -22,7 +22,9 @@ const getSingleQuote = async () => {
    quote.innerText = singleQuote.text;
    singleQuote.author !== null
       ? (author.innerText = singleQuote.author)
-      : singleQuote.author;
+      : (author.innerText = 'Unknown');
+
+   return singleQuote;
 };
 
 getQuoteButton.addEventListener('click', function () {
@@ -30,7 +32,14 @@ getQuoteButton.addEventListener('click', function () {
 });
 
 shareWhatsapp.addEventListener('click', function () {
-   window.open(`whatsapp://send?text=${quote.value}`);
+   getSingleQuote()
+      .then((res) => {
+         let text = res.text;
+         window.open(`whatsapp://send?text=${text}`);
+      })
+      .catch((err) => {
+         console.log(err);
+      });
 });
 
 getQuotes()
