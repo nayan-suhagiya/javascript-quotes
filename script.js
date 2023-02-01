@@ -30,7 +30,7 @@ const getSingleQuote = async () => {
 };
 
 function share() {
-   console.log(text1);
+   // console.log(text1);
    window.open(`whatsapp://send?text=${text1}`);
 }
 
