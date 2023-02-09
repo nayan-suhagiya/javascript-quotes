@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Julee&display=swap');
 .navLogo {
    font-weight: 900;
    font-size: 25px;
@@ -13,4 +14,9 @@ main {
 
 #toggleNav {
    border: none;
+}
+
+#quote {
+   font-family: 'Julee', cursive;
+   font-size: 23px;
 }

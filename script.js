@@ -6,6 +6,7 @@ $(document).ready(function () {
 
 let finalData;
 let text1;
+let text2;
 let getQuoteButton = document.getElementById('getQuoteButton');
 let shareWhatsapp = document.getElementById('shareWhatsapp');
 let quote = document.getElementById('quote');
@@ -29,6 +30,7 @@ const getSingleQuote = async () => {
    // console.log(finalData);
    let singleQuote = finalData[randomQuoteIndex];
    text1 = singleQuote.text;
+   text2 = singleQuote.author;
    quote.innerText = '"' + singleQuote.text + '"';
    singleQuote.author !== null
       ? (author.innerText = 'By. ' + singleQuote.author)
@@ -39,7 +41,7 @@ const getSingleQuote = async () => {
 
 function share() {
    // console.log(text1);
-   window.open(`whatsapp://send?text=${text1}`);
+   window.open(`whatsapp://send?text=${text1}-${text2}`);
 }
 
 getQuoteButton.addEventListener('click', function () {
